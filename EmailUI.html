@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .app-container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #ffffff;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+        .email-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .email-item:hover {
+            background-color: #f0f0f0;
+        }
+        .profile-picture {
+            width: 40px;
+            height: 40px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .email-content {
+            flex: 1;
+        }
+        .email-content .subject {
+            font-weight: bold;
+            margin: 0;
+        }
+        .email-content .preview {
+            font-size: 14px;
+            color: #666;
+        }
+        .email-details {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            overflow-y: auto;
+        }
+        .email-header {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .email-header h2 {
+            margin: 0;
+        }
+        .email-header .meta {
+            color: #888;
+            font-size: 14px;
+        }
+        .email-body {
+            /* Add your custom content styling here */
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar with email list -->
+        <div class="sidebar">
+            <div class="email-item" onclick="showEmailDetails()">
+                <div class="profile-picture">P</div>
+                <div class="email-content">
+                    <p class="subject">Thank you for your purchase</p>
+                    <p class="preview">Your order has been confirmed...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email details view -->
+        <div class="email-details" id="email-details" style="display: block;">
+            <div class="email-header">
+                <h2>Thank You For Your Purchase</h2>
+                <p class="meta">From: Playstation &lt;floyd@example.com&gt;<br>Date: Dec 16, 2024</p>
+            </div>
+            <div class="email-body" id="email-body">
+                <table align="center" border="0" width="660" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <td align="left" bgcolor="#FFFFFF" height="38" valign="middle" width="560" style="font-family:Helvetica,sans-serif;font-size:10px;line-height:20px;text-decoration:none;color:rgb(80,80,80)"></td>
+
+                
+              </tr>
+            </tbody>
+          </table><table bgcolor="#FFFFFF" align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr><td width="220"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="220" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+    <td align="center"><a href="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html#m_1345849165246626011_m_5156747317896820368_m_-1937512959384578864_" style="font-weight:bold;color:rgb(88,135,245)"> <img style="display:block" alt="PlayStation" title="PlayStation" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="438" height="106" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></a></td><td width="220"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="220" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table><table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="40" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(50,50,50)"><span style="font-size:30px;line-height:50px;font-family:Helvetica,sans-serif">Transaction Receipt</span><br>
+<br>
+Dear yuvan, <br><br>Thank you for your PlayStation®Store purchase.<br><br>A receipt of your purchase is below. Be sure to keep it in a safe place for future reference.</td>
+  </tr>
+</tbody></table>
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border-width:0px 0px 1px;border-style:none none solid;border-color:currentcolor currentcolor rgb(210,210,210)"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="40" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="40" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="40" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  
+  <td width="300" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(50,50,50)"><span style="font-size:22px;line-height:50px;font-family:Helvetica,sans-serif"><a href="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html#m_1345849165246626011_m_5156747317896820368_m_-1937512959384578864_" style="font-size:22px;line-height:50px;text-decoration:none;font-family:Helvetica,sans-serif;color:rgb(50,50,50)">Order Number:&nbsp;93636621013 </a></span></td><td bgcolor="#d2d2d2" width="15" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="15" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td bgcolor="#d2d2d2" width="270" align="right" style="margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(50,50,50)"><div style="line-height:15px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>Online ID:&nbsp;ykothari988  <div style="line-height:2px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>Date Purchased&nbsp;03/24/2018 @ 01:53 PM  <div style="line-height:15px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td width="15" bgcolor="#d2d2d2" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="15" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> 
+  
+  <td width="20" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"></td>
+  </tr>
+</tbody></table><table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="25" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="20" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="20" bgcolor="#1e1e1e" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>    <td width="492" bgcolor="#1e1e1e" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;font-weight:bold;color:rgb(255,255,255)"><div style="line-height:15px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>Details<div style="line-height:15px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td bgcolor="#ffffff" width="15" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td bgcolor="#1e1e1e" width="72" align="right" style="margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;font-weight:bold;color:rgb(255,255,255)"><div style="line-height:15px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>Price<div style="line-height:15px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td width="20" bgcolor="#1e1e1e" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="21" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"></td>  </tr></tbody></table> <table align="center" width="660" border="0" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="20" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>    <td width="492" bgcolor="#ffffff" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(210,210,210);color:rgb(80,80,80)"><div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>      <a href="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html#m_1345849165246626011_m_5156747317896820368_m_-1937512959384578864_" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;text-decoration:none;color:rgb(80,80,80)"><br>
+Fortnite Battle Royale  (Downloadable Game) </a>      <div style="line-height:2px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div><div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td bgcolor="#ffffff" width="15" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html"><div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>$0.00<div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border-width:0px 0px 1px;border-style:none none solid;border-color:currentcolor currentcolor rgb(210,210,210)"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="21" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"></td>  </tr></tbody></table>
+
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="30" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+
+
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="20" height="41" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html"></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>    <td width="425" bgcolor="#ffffff" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(80,80,80)"><div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>      <div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td bgcolor="#ffffff" width="20" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td bgcolor="#ffffff" width="133" align="right" style="margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(80,80,80)">  Subtotal:&nbsp;$0.00 <div style="line-height:2px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>    Tax:&nbsp;$0.00 <div style="line-height:2px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="22" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"></td>  </tr></tbody></table>
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="20" height="41" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+    <td width="379" valign="top" bgcolor="#ffffff" align="left" style="font-family:Helvetica,sans-serif;font-size:20px;line-height:20px;color:rgb(80,80,80)">    
+
+Current Wallet Amount*:&nbsp;$0.00 <div style="line-height:1px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div>      <em style="font-family:Helvetica,sans-serif"><span style="font-size:10px;font-family:Helvetica,sans-serif">*This wallet amount is current as of the date and time of this transaction.</span></em> 
+
+</td><td bgcolor="#ffffff" width="23" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td bgcolor="#ffffff" width="176" align="right" valign="top" style="margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif;font-size:20px;line-height:20px;color:rgb(80,80,80)">
+Total: &nbsp;$0.00
+        <div style="line-height:2px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> 
+&nbsp; </div></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+
+
+
+<td width="22" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"></td>
+  </tr>
+</tbody></table>
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0"> <tbody><tr> <td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> <td align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(50,50,50)"></td><td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> </tr></tbody></table>   
+
+ 
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0"> <tbody><tr> <td width="20" height="40" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="40" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border-width:0px 0px 1px;border-style:none none solid;border-color:currentcolor currentcolor rgb(210,210,210)"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> <td width="492" bgcolor="#ffffff" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(210,210,210);color:rgb(80,80,80)">&nbsp;</td><td bgcolor="#ffffff" width="72" align="right" style="margin:0px;padding:0px;border-width:0px 0px 1px;border-style:none none solid;font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;border-color:currentcolor currentcolor rgb(210,210,210);color:rgb(80,80,80)"><div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border-width:0px 0px 1px;border-style:none none solid;border-color:currentcolor currentcolor rgb(210,210,210)"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="21" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> </tr></tbody></table>
+
+
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="10" height="20" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="30" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+    <td width="650" bgcolor="#ffffff" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(80,80,80)">&nbsp;</td>
+  </tr>
+</tbody></table>
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="25" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0"> <tbody><tr> <td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> <td align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(50,50,50)"><br><br>The terms of service contain an explanation of the technical protection measures that apply to your purchased product(s)<br><br></td><td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td> </tr></tbody></table>
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="20" height="40" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="10" height="40" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border-width:0px 0px 1px;border-style:none none solid;border-color:currentcolor currentcolor rgb(210,210,210)"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+    <td width="492" bgcolor="#ffffff" align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(210,210,210);color:rgb(80,80,80)">&nbsp;</td><td bgcolor="#ffffff" width="72" align="right" style="margin:0px;padding:0px;border-width:0px 0px 1px;border-style:none none solid;font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;border-color:currentcolor currentcolor rgb(210,210,210);color:rgb(80,80,80)"><div style="line-height:20px;margin:0px;padding:0px;border:0px;font-family:Helvetica,sans-serif"> &nbsp; </div></td><td width="20" bgcolor="#ffffff" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border-width:0px 0px 1px;border-style:none none solid;border-color:currentcolor currentcolor rgb(210,210,210)"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td><td width="21" align="center" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+
+
+<table align="center" width="660" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px"><img style="display:block" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+
+    <td align="left" style="font-family:Helvetica,sans-serif;font-size:13px;line-height:20px;color:rgb(50,50,50)">
+  
+  <table align="center" width="660" border="0" cellspacing="0" cellpadding="0" style="font-family:Helvetica,sans-serif">
+  <tbody style="font-family:Helvetica,sans-serif"><tr style="font-family:Helvetica,sans-serif">
+    <td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px;font-family:Helvetica,sans-serif"><img style="display:block;font-family:Helvetica,sans-serif" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/%3Ctd" align="left"><br><br>
+  This e-mail message has been delivered from a send-only address. Please do not reply to this message. For more information about your account, please visit the links below.<br><br>Support:<br><a style="font-family:Helvetica,sans-serif;color:rgb(88,135,245)" href="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" target="_blank" data-saferedirecturl=""></a><br><br>Terms of Use and Privacy Policy:<br><a href="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" style="font-family:Helvetica,sans-serif" target="_blank" data-saferedirecturl="" font-family:helvetica,sans-serif"="">
+</a></td></tr></tbody><tbody style="font-family:Helvetica,sans-serif"><tr style="font-family:Helvetica,sans-serif">
+<td valign="top" align="left" width="20" height="15" style="font-family:Helvetica,sans-serif"><img style="display:block;font-family:Helvetica,sans-serif" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="20" height="15" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+
+<td height="15" style="font-family:Helvetica,sans-serif">&nbsp; and “PlayStation” are registered trademarks or trademarks of</td>
+</tr>
+</tbody></table>
+
+<table style="font-family:Helvetica,sans-serif">
+<tbody style="font-family:Helvetica,sans-serif"><tr style="font-family:Helvetica,sans-serif">
+<td height="15" style="font-family:Helvetica,sans-serif">Sony Interactive Entertainment Inc.</td>
+</tr>
+</tbody></table>
+
+<table style="font-family:Helvetica,sans-serif">
+<tbody style="font-family:Helvetica,sans-serif"><tr style="font-family:Helvetica,sans-serif">
+<td height="15" style="font-family:Helvetica,sans-serif">© 2018 Sony Interactive Entertainment LLC.</td>
+</tr>
+</tbody></table></td><td width="20" height="60" align="left" style="margin:0px;padding:0px;font-size:0px;line-height:0;border:0px;font-family:Helvetica,sans-serif"><img style="display:block;font-family:Helvetica,sans-serif" alt="" title="" border="0" src="file:///C:/Users/andyi/OneDrive/Documents/ymail/index.html" width="40" height="10" class="CToWUd" data-bit="iit" jslog="138226; u014N:xr6bB; 53:WzAsMl0."></td>
+  </tr>
+</tbody></table>
+
+  
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showEmailDetails() {
+            document.getElementById('email-details').style.display = 'block';
+        }
+    </script>
+
+
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        input[type="text"], input[type="password"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        #keyGenerationContainer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Login Panel -->
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <!-- Key Login Form -->
+        <div id="keyLoginForm">
+            <label for="generatedKey">Enter Generated Key:</label>
+            <input type="text" id="generatedKeyInput" placeholder="Generated Key">
+            <label for="username">Username:</label>
+            <input type="text" id="usernameInput" placeholder="Username">
+            <label for="password">Password:</label>
+            <input type="password" id="passwordInput" placeholder="Password">
+            <button class="btn" id="loginBtn">Login</button>
+            <p id="loginError" class="error hidden">Invalid key or credentials. Please try again.</p>
+        </div>
+
+        <!-- Dev Tools Button -->
+        <button class="btn" id="devToolsBtn">Dev Tools</button>
+
+        <!-- Dev Tools Password Prompt -->
+        <div id="devToolsPasswordPrompt" class="hidden">
+            <label for="devPassword">Enter Password:</label>
+            <input type="password" id="devPassword" />
+            <button class="btn" id="submitPasswordBtn">Submit</button>
+            <p id="errorMessage" class="error hidden">Incorrect password. Please try again.</p>
+        </div>
+
+        <!-- Key Generation Section (hidden initially) -->
+        <div id="keyGenerationContainer" class="hidden">
+            <h3>Generate Login Keys</h3>
+            <label for="genUsername">Username:</label>
+            <input type="text" id="genUsername" placeholder="Username"><br>
+            <label for="genPassword">Password:</label>
+            <input type="password" id="genPassword" placeholder="Password"><br>
+            <label for="genExpiration">Expiration Time (hours):</label>
+            <input type="number" id="genExpiration" min="1" placeholder="Expiration (hours)"><br>
+            <button class="btn" id="generateKeyBtn">Generate Key</button>
+            <p id="generatedKeyDisplay"></p>
+        </div>
+    </div>
+
+    <script>
+        const devToolsBtn = document.getElementById('devToolsBtn');
+        const devToolsPasswordPrompt = document.getElementById('devToolsPasswordPrompt');
+        const submitPasswordBtn = document.getElementById('submitPasswordBtn');
+        const devPasswordInput = document.getElementById('devPassword');
+        const errorMessage = document.getElementById('errorMessage');
+        const keyGenerationContainer = document.getElementById('keyGenerationContainer');
+        const generateKeyBtn = document.getElementById('generateKeyBtn');
+        const genUsernameInput = document.getElementById('genUsername');
+        const genPasswordInput = document.getElementById('genPassword');
+        const genExpirationInput = document.getElementById('genExpiration');
+        const generatedKeyDisplay = document.getElementById('generatedKeyDisplay');
+
+        const generatedKeyInput = document.getElementById('generatedKeyInput');
+        const usernameInput = document.getElementById('usernameInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginError = document.getElementById('loginError');
+
+        const correctPassword = "floyd";
+
+        // Show dev tools password prompt
+        devToolsBtn.addEventListener('click', () => {
+            devToolsPasswordPrompt.classList.remove('hidden');
+        });
+
+        // Check password and show key generation option
+        submitPasswordBtn.addEventListener('click', () => {
+            const enteredPassword = devPasswordInput.value;
+            if (enteredPassword === correctPassword) {
+                devToolsPasswordPrompt.classList.add('hidden');
+                keyGenerationContainer.classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+            } else {
+                errorMessage.classList.remove('hidden');
+            }
+        });
+
+        // Generate a unique key for user login with expiration
+        generateKeyBtn.addEventListener('click', () => {
+            const genUsername = genUsernameInput.value;
+            const genPassword = genPasswordInput.value;
+            const genExpirationHours = genExpirationInput.value;
+
+            if (genUsername && genPassword && genExpirationHours) {
+                const expirationTime = new Date();
+                expirationTime.setHours(expirationTime.getHours() + parseInt(genExpirationHours));
+
+                // Create a key (simple string combination)
+                const key = `${genUsername}-${btoa(genPassword)}-${expirationTime.toISOString()}`;
+
+                generatedKeyDisplay.textContent = `Generated Key: ${key}`;
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+
+        // Handle login form submission
+        loginBtn.addEventListener('click', () => {
+            const enteredKey = generatedKeyInput.value;
+            const enteredUsername = usernameInput.value;
+            const enteredPassword = passwordInput.value;
+
+            // Validate the entered key (you can store and compare with actual keys)
+            // For simplicity, we'll just check if key contains username and password
+            if (enteredKey && enteredUsername && enteredPassword) {
+                // For demo purposes: basic validation (expand as needed)
+                const isValid = enteredKey.includes(enteredUsername) && enteredKey.includes(btoa(enteredPassword));
+
+                if (isValid) {
+                    alert("Login Successful!");
+                    // Redirect to Email UI page after successful login
+                    window.location.href = "EmailUI.html";  // Change to your actual path if needed
+                } else {
+                    loginError.classList.remove('hidden');
+                }
+            } else {
+                loginError.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
